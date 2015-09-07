@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14E7f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zoN-XK-dJl">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="u1u-vH-lA9">
+            <objects>
+                <viewController id="zoN-XK-dJl" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4oI-Xm-EWG"/>
+                        <viewControllerLayoutGuide type="bottom" id="1UA-Yj-bjZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kB9-Ha-MzI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8W-rl-XVs">
+                                <rect key="frame" x="235" y="345" width="130" height="30"/>
+                                <state key="normal" title="Show System Alert"/>
+                                <connections>
+                                    <action selector="showSystemAlert:" destination="zoN-XK-dJl" eventType="touchUpInside" id="bQZ-43-3J9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0N6-dL-YTM">
+                                <rect key="frame" x="234" y="435" width="132" height="30"/>
+                                <state key="normal" title="Show Custom Alert"/>
+                                <connections>
+                                    <action selector="showCustomAlert:" destination="zoN-XK-dJl" eventType="touchUpInside" id="EFM-on-hNF"/>
+                                </connections>
+                            </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JUl-h0-Ixf">
+                                <rect key="frame" x="516" y="508" width="51" height="31"/>
+                                <connections>
+                                    <action selector="draggableChanged:" destination="zoN-XK-dJl" eventType="valueChanged" id="jci-o4-yi0"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0rR-cT-S9F">
+                                <rect key="frame" x="516" y="554" width="51" height="31"/>
+                                <connections>
+                                    <action selector="throwableChanged:" destination="zoN-XK-dJl" eventType="valueChanged" id="qYB-wh-k6F"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Throwable:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUo-tu-7mS">
+                                <rect key="frame" x="416" y="559" width="85" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Draggable:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mEG-A6-mg0">
+                                <rect key="frame" x="417" y="513" width="84" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1UA-Yj-bjZ" firstAttribute="top" secondItem="0rR-cT-S9F" secondAttribute="bottom" constant="15" id="4k8-eF-68c"/>
+                            <constraint firstItem="Y8W-rl-XVs" firstAttribute="centerX" secondItem="kB9-Ha-MzI" secondAttribute="centerX" id="BgG-uc-ak9"/>
+                            <constraint firstItem="JUl-h0-Ixf" firstAttribute="leading" secondItem="mEG-A6-mg0" secondAttribute="trailing" constant="15" id="Nxn-LF-UE0"/>
+                            <constraint firstItem="mEG-A6-mg0" firstAttribute="centerY" secondItem="JUl-h0-Ixf" secondAttribute="centerY" id="RB6-Du-JoS"/>
+                            <constraint firstItem="Y8W-rl-XVs" firstAttribute="centerY" secondItem="kB9-Ha-MzI" secondAttribute="centerY" multiplier="1.2" id="RtH-Ee-w4X"/>
+                            <constraint firstItem="0rR-cT-S9F" firstAttribute="leading" secondItem="rUo-tu-7mS" secondAttribute="trailing" constant="15" id="Spe-Fh-mTy"/>
+                            <constraint firstItem="rUo-tu-7mS" firstAttribute="centerY" secondItem="0rR-cT-S9F" secondAttribute="centerY" id="Ubz-YU-1Xw"/>
+                            <constraint firstItem="0N6-dL-YTM" firstAttribute="centerY" secondItem="kB9-Ha-MzI" secondAttribute="centerY" multiplier="1.5" id="cWt-VP-RKJ"/>
+                            <constraint firstItem="0rR-cT-S9F" firstAttribute="top" secondItem="JUl-h0-Ixf" secondAttribute="bottom" constant="15" id="dV7-zb-q8N"/>
+                            <constraint firstItem="0N6-dL-YTM" firstAttribute="centerX" secondItem="kB9-Ha-MzI" secondAttribute="centerX" id="e6o-sO-AyZ"/>
+                            <constraint firstItem="JUl-h0-Ixf" firstAttribute="leading" secondItem="0rR-cT-S9F" secondAttribute="leading" id="rHm-0M-jCj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0rR-cT-S9F" secondAttribute="trailing" constant="15" id="sbY-i6-Zzx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="draggableSwitch" destination="JUl-h0-Ixf" id="fDw-l0-1CE"/>
+                        <outlet property="throwableSwitch" destination="0rR-cT-S9F" id="jwC-oo-o4R"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MtM-x9-HLL" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
