@@ -10,13 +10,16 @@ Inspired By [TeehanLax's TLAlertView](https://github.com/TeehanLax/TLAlertView),
 ###How To Use ?
 To use CYAlertView,simply drag the "CYAlertView" folder into your project,import "CYAlertView.h",and you are ready to go ! 
 
-**Creating instance**
+**Creating instance:**
 
 ```smalltalk
 CYAlertView *alert = [[CYAlertView alloc]initWithTitle:@"Title"
                                                message:@"Message"
                                            withActions:@[] 
                                             tapToClose:NO];
+                                            
+                                            
+[alert show];
 
 ```
 
@@ -34,5 +37,6 @@ CYAlertView *alert = [[CYAlertView alloc]initWithTitle:@"Title"
                                                message:@"Message"
                                            withActions:@[cancelAction]
                                             tapToClose:NO];
+[alert show];
 ```
 For more details,please download the sample project.
