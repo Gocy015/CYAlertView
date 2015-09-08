@@ -12,16 +12,19 @@ To use CYAlertView,simply drag the "CYAlertView" folder into your project,import
 
 **Creating instance**
 
-<objective-c> CYAlertView *alert = [[CYAlertView alloc]initWithTitle:@"Title" message:@"Message" withActions:@[] tapToClose:NO];</objective-c> 
+```objective-j 
+CYAlertView *alert = [[CYAlertView alloc]initWithTitle:@"Title" message:@"Message" withActions:@[] tapToClose:NO];
+
+```
 
 
 if you pass nil or an empty array to the initilizer,the alert view will generate a default OK button,you can also add your custom callbacks using CYAlertAction,then add it into the array that you are passing to the initializer.
 
-
->CYAlertAction *cancelAction = [[CYAlertAction alloc]initWithTitle:@"Cancel" withActionType:ActionTypeDestructive handler:^(CYAlertAction *action){
+```objective-j
+CYAlertAction *cancelAction = [[CYAlertAction alloc]initWithTitle:@"Cancel" withActionType:ActionTypeDestructive handler:^(CYAlertAction *action){
         NSLog(@"Cancel");
 }];
 
-> CYAlertView *alert = [[CYAlertView alloc]initWithTitle:@"Title" message:@"Message" withActions:@[cancelAction] tapToClose:NO];
-
+CYAlertView *alert = [[CYAlertView alloc]initWithTitle:@"Title" message:@"Message" withActions:@[cancelAction] tapToClose:NO];
+```
 For more details,please download the sample project.
