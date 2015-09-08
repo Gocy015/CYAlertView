@@ -22,10 +22,4 @@
 @property (assign,nonatomic) BOOL throwable;
  
 @end
-
-
-@interface UIButton (custom_pressed)
-
--(void)setHighlighted:(BOOL)highlighted;
-
-@end
+ 

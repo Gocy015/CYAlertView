@@ -8,26 +8,10 @@
 
 #import "CYAlertView.h"
 #import "CYAlertAction.h"
+#import "AlertActionButton.h"
+
+
  
-
-
-
-
-@implementation UIButton (custom_pressed)
-
--(void)setHighlighted:(BOOL)highlighted{
-    
-    if (highlighted) {
-        UIColor *bg = [UIColor colorWithWhite:0.0 alpha:0.08];
-        self.backgroundColor = bg;
-    }
-    else{
-        self.backgroundColor  = [UIColor clearColor];
-    }
-    [super setHighlighted:highlighted];
-}
-
-@end
 
 static const CGFloat alertViewWidth = 275.0f;
 static const CGFloat uiElementsPadding = 18.0f;
@@ -289,7 +273,8 @@ static const CGFloat pushRatio = 35.0f;
             [self.alertView addSubview:lineView];
             lastY += 1;
             
-            UIButton *actionButton = [UIButton buttonWithType:UIButtonTypeSystem];
+            AlertActionButton *actionButton = [AlertActionButton buttonWithType:UIButtonTypeSystem];
+            actionButton.tag = 99;
             actionButton.frame = CGRectMake(0, lastY, alertViewWidth, 48);
             [actionButton setTitle:action.title forState:UIControlStateNormal];
             [actionButton addTarget:action action:@selector(runBlock) forControlEvents:UIControlEventTouchUpInside];
