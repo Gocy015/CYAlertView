@@ -74,6 +74,8 @@ static const CGFloat pushRatio = 35.0f;
     self.title = nil;
     self.message = nil; 
   //  NSLog(@"dealloc");
+    [self.animator removeAllBehaviors];
+    self.animator = nil;
 }
 
 #pragma mark - Control Methods
@@ -369,6 +371,12 @@ static const CGFloat pushRatio = 35.0f;
                 UIPushBehavior *push = [[UIPushBehavior alloc]initWithItems:@[self.alertView] mode:UIPushBehaviorModeInstantaneous];
                 push.pushDirection = CGVectorMake(velocity.x / 20, velocity.y / 20);
                 push.magnitude = magnitude / pushRatio;
+                __weak CYAlertView *wself = self;
+                __weak UIPushBehavior *wpush = push;
+                push.action = ^{
+                    [wself.animator removeBehavior:wpush];
+                };
+                
                 [self.animator addBehavior:push];
                 
                 UIDynamicItemBehavior *itemBehavior = [[UIDynamicItemBehavior alloc]initWithItems:@[self.alertView]];
